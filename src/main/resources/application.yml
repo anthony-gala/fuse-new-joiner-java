@@ -56,7 +56,8 @@ spring:
       username: sa
       password:
    rest:
-      iexBasePath: https://api.iextrading.com/1.0
+      iexBasePath: https://cloud.iexapis.com/stable
+      iexPublicToken: pk_7c9308a29848452aabc5253cf7297cc8
 # set debug to get spring to log the classpath (and other things) on startup
 debug: true
 

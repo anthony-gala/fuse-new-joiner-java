@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @FeignClient(name = "IEX", url = "${spring.rest.iexBasePath}")
 public interface IexClient {
-
   /**
    * Get a list of all stocks supported by IEX. See https://iextrading.com/developer/docs/#symbols.
    * As of July 2019 this returns almost 9,000 symbols, so maybe don't call it in a loop.
    *
    * @return a list of all of the stock symbols supported by IEX.
    */
-  @GetMapping("/ref-data/symbols")
+
+  @GetMapping("/ref-data/symbols?token=${spring.rest.iexPublicToken}")
   List<IexSymbol> getAllSymbols();
 
   /**
